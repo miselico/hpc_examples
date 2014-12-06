@@ -1,0 +1,35 @@
+#!/bin/bash -l
+# created: Dec 4, 2014 5:43 PM
+# author: Put your name here
+
+# the following comment lines are parameters to the batch system:
+
+#SBATCH -J the name of the batch job, needed to find it back from the queue
+#SBATCH -o the name of the standard out file, relative to the directory from where the script is run
+#SBATCH -e the name of the standard error file, relative to the directory from where the script is run
+#SBATCH -n the number of cores you want the process to run on
+#SBATCH -t time in hh:mm:ss format, the examples in this repository should all finnish within one minuts
+#SBATCH --mail-type=END
+#SBATCH --mail-user=yourmailaddress@provider.tld
+
+# some commands to manage this batch script
+#   submission command
+#     sbatch [script-file]
+#   status command
+#     squeue -u $USER
+#   termination command
+#     scancel [jobid]
+
+# For more information
+#   man sbatch
+#   more examples in Taito guide in
+#   http://research.csc.fi/taito-user-guide
+
+# example run command, change this to the executable which you want to run
+srun ~/examples/ex0
+
+# This script will print some usage statistics to the
+# end of file: out.txt
+# Use that to improve your resource request estimate
+# on later jobs.
+used_slurm_resources.bash
