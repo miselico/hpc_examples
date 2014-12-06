@@ -2,13 +2,20 @@
 #include<stdlib.h>
 #include<mpi.h>
 
-
+/**
+ * An non-optimal solution for the ring communication pattern (improvement in Example3c).
+ * 
+ * The 0th process starts by receiving, all the others by sending. This way each of the communications will take place.
+ * However, the overall performance will be low because the send operations happen sequentially.
+ * 
+ * Can be run with any number of cores
+ */
 int main(int argc, char *argv[])
 {
     int i, myid, ntasks;
     int sendTo;
     int receiveFrom;
-    int size = 100;
+    int size = 100000;
     int *message;
     int *receiveBuffer;
     MPI_Status status;

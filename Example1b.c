@@ -3,6 +3,15 @@
 
 //source : http://www.mpi-forum.org/docs/mpi-3.0/mpi30-report.pdf
 
+/**
+ * Minimal MPI program
+ * 
+ * Process 0 sends a message to process 1, containing the text "Hello, there".
+ * Then process 1 determines the amount of characters which are send.
+ * 
+ * Run with two cores
+ */
+
 int main( int argc, char *argv[])
 {
     char message[20];

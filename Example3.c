@@ -2,13 +2,19 @@
 #include<stdlib.h>
 #include<mpi.h>
 
-
+/**
+ * Problematic implementation of the ring communication pattern.
+ * 
+ * All processes start by sending to the next one, but none of them is receiving, causing a deadlock.
+ * 
+ * ##########DO NOT USE THIS CODE!!
+ */
 int main(int argc, char *argv[])
 {
     int i, myid, ntasks;
     int sendTo;
     int receiveFrom;
-    int size = 100;
+    int size = 100000;
     int *message;
     int *receiveBuffer;
     MPI_Status status;

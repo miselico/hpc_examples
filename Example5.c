@@ -2,7 +2,11 @@
 #include<stdlib.h>
 #include<mpi.h>
 
-
+/**
+ * An example of a collective operation. The data which is available in node0 is broadcast to all other nodes.
+ *
+ * Can be run with any number of cores
+ */
 int main(int argc, char *argv[])
 {
     int i, myid, ntasks;

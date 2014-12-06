@@ -2,11 +2,16 @@
 #include<stdlib.h>
 #include<mpi.h>
 
-
+/**
+ * A solution for the deadlock problem when two processes try have to send data to each other.
+ * The 0th process sends first and the 1st receives first, then they switch roles.
+ * 
+ * Run with two cores
+ */
 int main(int argc, char *argv[])
 {
     int i, myid, ntasks;
-    int size = 100;
+    int size = 100000;
     int *message;
     int *receiveBuffer;
     MPI_Status status;
@@ -22,7 +27,7 @@ int main(int argc, char *argv[])
     for (i = 0; i < size; i++)
         message[i] = myid;
 
-    /* Send and receive messages */
++    /* Send and receive messages */
     if (myid == 0) {
         MPI_Send(message, size, MPI_INT, 1, 1, MPI_COMM_WORLD);
         MPI_Recv(receiveBuffer, size, MPI_INT, 1, 2, MPI_COMM_WORLD,

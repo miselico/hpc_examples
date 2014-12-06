@@ -2,7 +2,16 @@
 #include<stdlib.h>
 #include<mpi.h>
 
-
+/**
+ * This is situation which could deadlock, depending on the MPI implementation and runtime conditions.
+ * Both processes are sending at the same time to each other, and only when that is done they start receiving.
+ * 
+ * It might be that it still works because the message is small and the MPI runtime could buffer the message to be sent and let the program continue.
+ * Example2_large is the same, but a larger message is sent.
+ * 
+ * ##########DO NOT USE THIS CODE!!
+ * 
+ */
 int main(int argc, char *argv[])
 {
     int i, myid, ntasks;

@@ -2,7 +2,13 @@
 #include<stdlib.h>
 #include<mpi.h>
 
-
+/**
+ * Solution for the pairwise exchange patters (used for exchanging ghost layers)
+ * 
+ * The first and last process get a special treatment. They will MPI_PROC_NULL as the source or destination when no communication is needed.
+ *
+ * Can be run with any number of cores
+ */
 int main(int argc, char *argv[])
 {
     int i, myid, ntasks;

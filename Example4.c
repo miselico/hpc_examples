@@ -2,7 +2,12 @@
 #include<stdlib.h>
 #include<mpi.h>
 
-
+/**
+ * Problem for the pairwise exchange patters (used for exchanging ghost layers)
+ * We cannot do the same for all processes.
+ * 
+ * This code will not compile
+ */
 int main(int argc, char *argv[])
 {
     int i, myid, ntasks;
