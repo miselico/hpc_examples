@@ -4,12 +4,12 @@
 
 # the following comment lines are parameters to the batch system:
 
-#SBATCH -J myjob_jydemoXX
-#SBATCH -o out.txt
-#SBATCH -e err.txt
-#SBATCH -n 5
-#SBATCH -p parallel
-#SBATCH -t 00:05:00
+#SBATCH -J the name of the batch job, needed to find it back from the queue
+#SBATCH -o the name of the standard out file, relative to the directory from where the script is run
+#SBATCH -e the name of the standard error file, relative to the directory from where the script is run
+#SBATCH -n the number of cores you want the process to run on
+#SBATCH -p the queue on which the job should be placed. 'parallel' is you need more as 16 cores
+#SBATCH -t time in hh:mm:ss format, the examples in this repository should all finnish within one minuts
 #SBATCH --mail-type=END
 #SBATCH --mail-user=yourmailaddress@provider.tld
 
