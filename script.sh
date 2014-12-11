@@ -27,7 +27,7 @@
 #   http://research.csc.fi/taito-user-guide
 
 # example run command, change this to the executable which you want to run
-srun ~/examples/ex0
+srun ~/hpc_examples/ex0
 
 # This script will print some usage statistics to the
 # end of file: out.txt

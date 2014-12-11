@@ -10,7 +10,7 @@ Other environments have similar commands, but they are likely different. Check t
 Compiling MPI code
 ------------------
 
-    mpicc -O3 -Wall codefile.c -o executable
+    mpicc -O3 -Wall codefile.c -o ex0
 
 * `mpicc` is the compiler use for compiling c code which uses MPI
 * `-03` sets the optimization level, this should be left out if you plan to use a debugger,
